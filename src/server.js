@@ -5,16 +5,6 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 const helloWorld = require("./services/helloWorld.service");
 
-// var Controller = require("./controller");
-// const keycloak = require("./config/config.js").initKeycloak();
-
-// app.use(keycloak.middleware());
-
-// app.use("/hello", Controller);
-// app.listen(5000, () => {
-//   console.log("it is started");
-// });
-
 app.use(bodyParser.json());
 
 // Enable CORS support
