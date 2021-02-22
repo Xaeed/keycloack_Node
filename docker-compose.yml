@@ -4,12 +4,6 @@ volumes:
   postgres_data:
     driver: local
 services:
-  server:
-    build: .
-    ports:
-      - "5000:5000"
-    depends_on:
-      - keycloak
   postgres:
     image: postgres
     volumes:
@@ -35,3 +29,11 @@ services:
     restart: always
     depends_on:
       - postgres
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - keycloak
